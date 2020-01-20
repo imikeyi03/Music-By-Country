@@ -22,17 +22,17 @@
         <form>
             <fieldset>
                 <label for="js-search-country">Country</label>
-                <input type="text" name="js-search-country" id="js-search-country" placeholder="United States">
+                <input type="text" name="js-search-country" id="js-search-country" placeholder="United States" required>
 
                 <label for="js-limit-results">Limit Results</label>
-                <input type="number" name="js-limit-results" id="js-limit-results" placeholder="10">
+                <input type="number" name="js-limit-results" id="js-limit-results" placeholder="10"  min ="1" max="50"required>
 
                 <input type="submit" value="Submit">
             </fieldset>
         </form>
         <section class="top-artists-container hidden" >
             <h2>Top Artists</h2>
-            <ul>
+            <ol>
                 <li>Lorem ipsum dolor sit amet, consectetuer adipiscing 
                 elit. Aenean commodo ligula eget dolor. Aenean 
                 massa.</li>
@@ -45,12 +45,12 @@
                 <li>In enim justo, rhoncus ut, imperdiet a, venenatis 
                 vitae, justo. Nullam dictum felis eu pede mollis 
                 pretium. Integer tincidunt.</li>
-              </ul>
+              </ol>
               
         </section>
         <section class="top-songs-container hidden">
             <h2>Top Songs</h2>
-            <ul>
+            <ol>
                 <li>Lorem ipsum dolor sit amet, consectetuer adipiscing 
                 elit. Aenean commodo ligula eget dolor. Aenean 
                 massa.</li>
@@ -63,7 +63,7 @@
                 <li>In enim justo, rhoncus ut, imperdiet a, venenatis 
                 vitae, justo. Nullam dictum felis eu pede mollis 
                 pretium. Integer tincidunt.</li>
-              </ul>
+              </ol>
               
         </section>
     </main>
