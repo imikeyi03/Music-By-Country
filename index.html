@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://use.typekit.net/uzl1whw.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Music By Country</title>
 </head>
 <body>
 
     <header>
         <nav><img src="MBC_sm.png" alt="logo"></nav>
-        <h1>Find top artists and songs.</h1>
+        <h1>Find top songs in your country.</h1>
     </header>
 
     <!-- Need to place form that will contain query text inputs for country search and another for limit amounts -->
@@ -30,27 +30,15 @@
                 <input type="submit" value="Submit">
             </fieldset>
         </form>
-        <section class="top-artists-container hidden" >
-            <h2>Top Artists</h2>
-            <ol>
-                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing 
-                elit. Aenean commodo ligula eget dolor. Aenean 
-                massa.</li>
-                <li>Cum sociis natoque penatibus et magnis dis 
-                parturient montes, nascetur ridiculus mus. Donec quam 
-                felis, ultricies nec, pellentesque eu, pretium quis, 
-                sem.</li>
-                <li>Nulla consequat massa quis enim. Donec pede justo, 
-                fringilla vel, aliquet nec, vulputate eget, arcu.</li>
-                <li>In enim justo, rhoncus ut, imperdiet a, venenatis 
-                vitae, justo. Nullam dictum felis eu pede mollis 
-                pretium. Integer tincidunt.</li>
-              </ol>
-              
+
+        <!-- This will display country flag and name -->
+        <section>
+
         </section>
+        <!-- This will display the Rank, song/artist name, and a link to stream on last.fm  -->
         <section class="top-songs-container hidden">
             <h2>Top Songs</h2>
-            <ol>
+            <ul>
                 <li>Lorem ipsum dolor sit amet, consectetuer adipiscing 
                 elit. Aenean commodo ligula eget dolor. Aenean 
                 massa.</li>
@@ -63,16 +51,13 @@
                 <li>In enim justo, rhoncus ut, imperdiet a, venenatis 
                 vitae, justo. Nullam dictum felis eu pede mollis 
                 pretium. Integer tincidunt.</li>
-              </ol>
+              </ul>
               
         </section>
     </main>
     <footer>
         <p>&copy; 2020 Mikey Mann</p>
-    </footer>
-
-
-
+    </footer>   
 <script src="index.js"></script>    
 </body>
 </html>
