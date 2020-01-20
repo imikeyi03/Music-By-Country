@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    text-align: center;
+    background-color: #0f4c75;
+    color: white;
+    margin: 0;
+    padding-top: 25px;
+}
+
+nav {
+    background-color: #1b262c;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+main {
+    margin: 0 auto;
+}
+
+form {
+    background-color: #0f4c75;
+    padding-top: 10px;
+    padding-bottom: 45px;
+}
+
+label {
+    font-size: 20px;
+}
+
+form, input {
+    text-align: center;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+}
+
+input[type=text], input[type=number] {
+    display: block;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+
+}
+
+
+.top-artists-container, .top-songs-container {
+    text-align: center;
+    background-color: #F1F1F1 ;
+    color: #bbe1fa;
+    margin: 0 auto 40px auto;
+    width: 60%;
+}
+
+
+footer {
+    margin: 0 auto;
+    text-align: center;
+    background-color:#1b262c;
+    color: white;
+}
+
+
