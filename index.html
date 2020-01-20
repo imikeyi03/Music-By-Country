@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Music By Country</title>
+</head>
+<body>
+
+    <header>
+        <nav>Music by Coutry Logo</nav>
+        <h1>Find top artists and songs.</h1>
+    </header>
+
+    <!-- Need to place form that will contain query text inputs for country search and another for limit amounts -->
+    <main>
+
+        <form>
+            <fieldset>
+                <label for="js-search-country">Country</label>
+                <input type="text" name="js-search-country" id="js-search-country" placeholder="United States">
+
+                <label for="js-limit-results">Limit Results</label>
+                <input type="number" name="js-limit-results" id="js-limit-results" placeholder="10">
+            </fieldset>
+        </form>
+        <section class="top-artists-container hidden" >
+            <h2>Top Artists</h2>
+        </section>
+        <section class="top-songs-container hidden">
+            <h2>Top Songs</h2>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2020 Mikey Mann</p>
+    </footer>
+
+
+
+<script src="index.js"></script>    
+</body>
+</html>
