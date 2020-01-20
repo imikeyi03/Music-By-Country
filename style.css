@@ -6,21 +6,23 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Quatro',Helvetica,sans-serif;
 }
 
-
-h1 {
-    text-align: center;
-    background-color: #0f4c75;
-    color: white;
-    margin: 0;
-    padding-top: 25px;
-}
 
 nav {
     background-color: #1b262c;
     padding: 10px;
     text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    background-color: #0f4c75;
+    color: white;
+    margin: 0;
+    padding-top: 25px;
 }
 
 
@@ -32,11 +34,14 @@ main {
 form {
     background-color: #0f4c75;
     padding-top: 10px;
-    padding-bottom: 45px;
+    margin-bottom: 15px;
 }
 
 label {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    color: white;
 }
 
 form, input {
@@ -53,16 +58,38 @@ input[type=text], input[type=number] {
     width: 150px;
     height: 30px;
     margin-bottom: 10px;
+    margin-top: 5px;
+    border: none;
 
+}
+
+input[type=submit] {
+    border: none;
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    background-color: #bbe1fa;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 1px 5px #1b262c;
+    
+}
+
+input[type=submit]:hover {
+    box-shadow: none;
 }
 
 
 .top-artists-container, .top-songs-container {
     text-align: center;
     background-color: #F1F1F1 ;
-    color: #bbe1fa;
-    margin: 0 auto 40px auto;
-    width: 60%;
+    color: #0f4c75;
+    margin: 20px auto 40px auto;
+    width: 80%;
+    line-height: 1.5;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 
@@ -71,6 +98,7 @@ footer {
     text-align: center;
     background-color:#1b262c;
     color: white;
+    padding: 10px;
 }
 
 
