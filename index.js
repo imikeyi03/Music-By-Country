@@ -42,7 +42,6 @@ function getMusic(query, limit) {
     console.log(url);
   
     fetch(url)
-    fetch(url2)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -59,7 +58,7 @@ function getMusic(query, limit) {
 
     function displaySongs(responseJson) {
         $('#js-top-songs').empty();
-        console.log(responseJson.tracks.track[0].name);
+        console.log(responseJson);
       
         for(let i = 0; i < responseJson.tracks.track.length; i++) {
 
@@ -82,7 +81,7 @@ function watchForm() {
       const countrySearchTerm = $('#js-search-country').val();
       const limit = $('#js-limit-results').val();
       getMusic(countrySearchTerm, limit);
-    //   getCountryDetails(countrySearchTerm);
+      getCountryDetails(countrySearchTerm);
     });
   }
   

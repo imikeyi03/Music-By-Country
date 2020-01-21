@@ -55,6 +55,7 @@ form, input {
 
 fieldset {
     border: none;
+    padding-bottom: 350px;
 }
 
 input[type=text], input[type=number] {
