@@ -37,10 +37,12 @@ function getMusic(query, limit) {
 
     const queryString = formatQueryParams(params)
     const url = lastFmURL + '?' + queryString;
-  
+    const url2 = restCountryURL + query;
+    console.log(url2);
     console.log(url);
   
     fetch(url)
+    fetch(url2)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -61,7 +63,12 @@ function getMusic(query, limit) {
       
         for(let i = 0; i < responseJson.tracks.track.length; i++) {
 
-          $('#js-top-songs').append(`<li><h3>${responseJson.tracks.track[i].name} by Mikey</h3></li>`)};
+          $('#js-top-songs').append(
+            `<li><h3>${responseJson.tracks.track[i].name} by 
+            ${responseJson.tracks.track[i].artist.name}
+            </h3></li>`)};
+
+            $('.top-songs-container').removeClass('hidden');
 
     }
 
