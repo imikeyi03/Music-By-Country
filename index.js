@@ -10,6 +10,7 @@ const lastFmApiKey = "1f5f7a9370642b804d81da8dc68d5cfe";
 
 //geo lastFM endpoint
 const lastFmURL = "http://ws.audioscrobbler.com/2.0/";
+const format = "json";
 let lastFmMethod = "geo.gettoptracks"; 
 
 //REST countries endpoint
@@ -27,12 +28,13 @@ function formatQueryParams(params) {
 
 function getMusic(query, limit) {
     const params = {
-      limit,
+      method: lastFmMethod, 
       country: query,
-      method: lastFmMethod,
       api_key: lastFmApiKey,
-      
+      limit,
+      format: format,
     };
+
     const queryString = formatQueryParams(params)
     const url = lastFmURL + '?' + queryString;
   
@@ -45,20 +47,36 @@ function getMusic(query, limit) {
         }
         throw new Error(response.statusText);
       })
-      .then(responseJson => displayResults(responseJson))
+      
+      .then(responseJson => displaySongs(responseJson))
       .catch(err => {
         $('#js-error-message').text(`Something went wrong: ${err.message}`);
       });
   }
 
 
+    function displaySongs(responseJson) {
+        $('js-top-songs').empty();
+      
+        for(let i = 0; i < responseJson.tracks[i].length; i++) {
+
+            $('js-top-songs').append(
+                `<li><h3>${responseJson.track[i].name}</h3></li>`
+            )};
+
+    }
+
+
+
+
 function watchForm() {
-    $('fieldset').submit(event => {
+    $('form').submit(event => {
+    console.log('I am firing');
       event.preventDefault();
       const countrySearchTerm = $('#js-search-country').val();
       const limit = $('#js-limit-results').val();
       getMusic(countrySearchTerm, limit);
-      getCountryDetails(countrySearchTerm);
+    //   getCountryDetails(countrySearchTerm);
     });
   }
   
