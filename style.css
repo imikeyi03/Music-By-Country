@@ -25,6 +25,10 @@ h1 {
     padding-top: 25px;
 }
 
+h2 {
+    font-size: 40px;
+}
+
 
 
 main {
@@ -81,7 +85,7 @@ input[type=submit]:hover {
 }
 
 
-.top-artists-container, .top-songs-container {
+ .top-songs-container {
     text-align: center;
     background-color: #F1F1F1 ;
     color: #0f4c75;
@@ -91,6 +95,13 @@ input[type=submit]:hover {
     border-radius: 5px;
     padding: 5px 10px;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: black
+}
+
 
 
 footer {

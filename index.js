@@ -56,13 +56,12 @@ function getMusic(query, limit) {
 
 
     function displaySongs(responseJson) {
-        $('js-top-songs').empty();
+        $('#js-top-songs').empty();
+        console.log(responseJson.tracks.track[0].name);
       
-        for(let i = 0; i < responseJson.tracks[i].length; i++) {
+        for(let i = 0; i < responseJson.tracks.track.length; i++) {
 
-            $('js-top-songs').append(
-                `<li><h3>${responseJson.track[i].name}</h3></li>`
-            )};
+          $('#js-top-songs').append(`<li><h3>${responseJson.tracks.track[i].name} by Mikey</h3></li>`)};
 
     }
 
