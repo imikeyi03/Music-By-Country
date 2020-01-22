@@ -95,13 +95,13 @@ function getMusic(query, limit) {
 
     function displaySongs(responseJson) {
         $('#js-top-songs').empty();
-      
+        console.log(responseJson);
         for(let i = 0; i < responseJson.tracks.track.length; i++) {
 
           $('#js-top-songs').append(
-            `<li><h3>${responseJson.tracks.track[i].name} by 
+            `<a href="${responseJson.tracks.track[i].url}"><li><p>${responseJson.tracks.track[i].name} by 
             ${responseJson.tracks.track[i].artist.name}
-            </h3></li>`)};
+            </p></li></a>`)};
 
             $('.top-songs-container').removeClass('hidden');
 

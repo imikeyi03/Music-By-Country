@@ -127,6 +127,15 @@ ul {
     color: black
 }
 
+a {
+    font-weight: bold;
+    color: #1b262c;
+}
+
+a:visited {
+    color: #1b262c;
+}
+
 .hidden {
     display: none;
 }
