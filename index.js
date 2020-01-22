@@ -99,7 +99,7 @@ function getMusic(query, limit) {
         for(let i = 0; i < responseJson.tracks.track.length; i++) {
 
           $('#js-top-songs').append(
-            `<a href="${responseJson.tracks.track[i].url}"><li><p>${responseJson.tracks.track[i].name} by 
+            `<a href="${responseJson.tracks.track[i].url}" target="_blank"><li><p>${responseJson.tracks.track[i].name} by 
             ${responseJson.tracks.track[i].artist.name}
             </p></li></a>`)};
 
