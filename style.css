@@ -35,12 +35,13 @@ h3 {
 }
 
 #js-country-results{
+    padding-top: 25px;
     margin: 0 auto;
-    text-align: center;
+    text-align: center; 
 }
 
 #js-country-results img {
-    width: 30%; 
+    width: 20%;
 }
 
 

@@ -49,7 +49,6 @@ function getCountryDetails(countrySearchTerm) {
 
 
 
-
 function getMusic(query, limit) {
     const params = {
       method: lastFmMethod, 
@@ -78,12 +77,12 @@ function getMusic(query, limit) {
   
 
 
+
   function displayCountry(responseJson) {
     $('#js-country-results').empty();
 
       $('#js-country-results').append(
-        `<h3>${responseJson[0].name}</h3>
-         <img src="${responseJson[0].flag}" alt="spain flag">`
+         `<img src="${responseJson[0].flag}" alt="spain flag">`
         );
 
         $('#js-country-results').removeClass('hidden');
@@ -121,4 +120,5 @@ function watchForm() {
     });
   }
   
+
   $(watchForm);
