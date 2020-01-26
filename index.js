@@ -11,7 +11,7 @@ const lastFmApiKey = "1f5f7a9370642b804d81da8dc68d5cfe";
 //geo lastFM endpoint
 const lastFmURL = "http://ws.audioscrobbler.com/2.0/";
 const format = "json";
-const lastFmMethod = "geo.gettoptracks"; 
+const lastFmMethod = "geo.gettoptracks";
 
 //REST countries endpoint
 let restCountryURL = "https://restcountries.eu/rest/v2/name/";
@@ -25,10 +25,10 @@ let restCountryURL = "https://restcountries.eu/rest/v2/name/";
 
 
 function formatQueryParams(params) {
-    const queryItems = Object.keys(params)
-      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-    return queryItems.join('&');
-  }
+  const queryItems = Object.keys(params)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+  return queryItems.join('&');
+}
 
 
 
@@ -50,7 +50,7 @@ function getCountryDetails(countrySearchTerm) {
       }
       throw new Error(response.statusText);
     })
-    
+
     .then(responseJson => displayCountry(responseJson))
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
@@ -65,42 +65,41 @@ function getCountryDetails(countrySearchTerm) {
 // Finally, we use fetch to get the JSON data from our URL and call the displaySongs function.
 
 function getMusic(query, limit) {
-    const params = {
-      method: lastFmMethod, 
-      country: query,
-      api_key: lastFmApiKey,
-      limit,
-      format: format,
-    };
+  const params = {
+    method: lastFmMethod,
+    country: query,
+    api_key: lastFmApiKey,
+    limit,
+    format: format,
+  };
 
-    const queryString = formatQueryParams(params)
-    const url = lastFmURL + '?' + queryString;
-  
-    fetch(url)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(response.statusText);
-      })
-      
-      .then(responseJson => displaySongs(responseJson))
-      .catch(err => {
-        $('#js-error-message').text(`Something went wrong: ${err.message}`);
-      });
-  }
-  
+  const queryString = formatQueryParams(params)
+  const url = lastFmURL + '?' + queryString;
 
+  fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+
+    .then(responseJson => displaySongs(responseJson))
+    .catch(err => {
+      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+    });
+}
 
 
-  function displayCountry(responseJson) {
-    $('#js-country-results').empty();
 
-      $('#js-country-results').append(
-         `<img src="${responseJson[0].flag}" alt="spain flag">`
-        );
+function displayCountry(responseJson) {
+  $('#js-country-results').empty();
 
-        $('#js-country-results').removeClass('hidden');
+  $('#js-country-results').append(
+    `<img src="${responseJson[0].flag}" alt="spain flag">`
+  );
+
+  $('#js-country-results').removeClass('hidden');
 
 }
 
@@ -108,32 +107,33 @@ function getMusic(query, limit) {
 
 
 
-    function displaySongs(responseJson) {
-        $('#js-top-songs').empty();
-      
-        for(let i = 0; i < responseJson.tracks.track.length; i++) {
+function displaySongs(responseJson) {
+  $('#js-top-songs').empty();
 
-          $('#js-top-songs').append(
-            `<a href="${responseJson.tracks.track[i].url}" target="_blank"><li><p>${responseJson.tracks.track[i].name} by 
-            ${responseJson.tracks.track[i].artist.name}
-            </p></li></a>`)};
+  for (let i = 0; i < responseJson.tracks.track.length; i++) {
 
-            $('.top-songs-container').removeClass('hidden');
+    $('#js-top-songs').append(
+      `<a href="${responseJson.tracks.track[i].url}" target="_blank"><li><p>${responseJson.tracks.track[i].name} by 
+    ${responseJson.tracks.track[i].artist.name}
+    </p></li></a>`)
+  };
 
-    }
+  $('.top-songs-container').removeClass('hidden');
+
+}
 
 
 
 
 function watchForm() {
-    $('form').submit(event => {
-      event.preventDefault();
-      const countrySearchTerm = $('#js-search-country').val();
-      const limit = $('#js-limit-results').val();
-      getMusic(countrySearchTerm, limit);
-      getCountryDetails(countrySearchTerm);
-    });
-  }
-  
+  $('form').submit(event => {
+    event.preventDefault();
+    const countrySearchTerm = $('#js-search-country').val();
+    const limit = $('#js-limit-results').val();
+    getMusic(countrySearchTerm, limit);
+    getCountryDetails(countrySearchTerm);
+  });
+}
 
-  $(watchForm);
+
+$(watchForm);

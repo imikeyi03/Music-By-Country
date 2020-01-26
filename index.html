@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/uzl1whw.css">
     <link rel="stylesheet" href="style.css">
     <title>Music By Country</title>
 </head>
+
 <body>
 
     <header>
-        <nav><img src="MBC_sm.png" alt="music by country"></nav>
+        <nav><img src="Design/MBC_sm.png" alt="music by country"></nav>
         <h1>Find top songs in your country.</h1>
     </header>
 
@@ -26,12 +28,13 @@
                 <input type="text" name="js-search-country" id="js-search-country" placeholder="United States" required>
 
                 <label for="js-limit-results">Limit Results</label>
-                <input type="number" name="js-limit-results" id="js-limit-results" placeholder="10"  min ="1" max="50" required>
+                <input type="number" name="js-limit-results" id="js-limit-results" placeholder="10" min="1" max="50"
+                    required>
 
                 <input type="submit" value="Find Songs">
             </fieldset>
             <p>Powered by</p>
-            <img src="1200px-Lastfm_logo.png" class="lastfm-logo" alt="lastfm-logo">
+            <img src="Design/1200px-Lastfm_logo.png" class="lastfm-logo" alt="lastfm-logo">
         </form>
         <!-- This will display country flag and name -->
         <section id="js-country-results" class="hidden">
@@ -41,16 +44,16 @@
         <section class="top-songs-container hidden">
             <h2>Top Songs</h2>
             <ul id="js-top-songs">
-            
+
             </ul>
-              
+
         </section>
     </main>
     <footer>
         <p>&copy; 2020 Mikey Mann</p>
     </footer>
-    
-<script src="debouce.js"></script>
-<script src="index.js"></script>    
+
+    <script src="index.js"></script>
 </body>
+
 </html>
