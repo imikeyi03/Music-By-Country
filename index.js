@@ -42,7 +42,6 @@ function formatQueryParams(params) {
 function getCountryDetails(countrySearchTerm) {
 
   const url = restCountryURL + countrySearchTerm;
-  console.log(url);
 
   fetch(url)
     .then(response => {
@@ -111,7 +110,7 @@ function getMusic(query, limit) {
 
     function displaySongs(responseJson) {
         $('#js-top-songs').empty();
-        console.log(responseJson);
+      
         for(let i = 0; i < responseJson.tracks.track.length; i++) {
 
           $('#js-top-songs').append(
