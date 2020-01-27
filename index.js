@@ -19,11 +19,6 @@ let restCountryURL = "https://restcountries.eu/rest/v2/name/";
 
 // *** Format Music Query Function ***
 
-//Takes all key/value pairs from query items and maps them using encodeURI components
-// Once a key is placed, it adds proper %20 url syntax to spaces and places = signs between keys and values.
-// Finally, we return the structured keys and values all joined by the & symbol to the Get Music Function
-
-
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -36,9 +31,6 @@ function formatQueryParams(params) {
 
 // *** Get Country Flag Function ***
 
-// Creates the url variable using the restcountiresURL variable and the CountrySearchTerm.
-// Then we use fetch to get the JSON data from our URL and call the displayCountry function.
-
 function getCountryDetails(countrySearchTerm) {
 
   const url = restCountryURL + countrySearchTerm;
@@ -48,6 +40,7 @@ function getCountryDetails(countrySearchTerm) {
       if (response.ok) {
         return response.json();
       }
+      alert("Country not found");
       throw new Error(response.statusText);
     })
 
@@ -59,10 +52,6 @@ function getCountryDetails(countrySearchTerm) {
 
 
 // *** Get Music Function ***
-
-// Takes in the countryterm/limit number and structures the query.
-// Once parameters are set, it takes the url and adds the new sanitized query string.
-// Finally, we use fetch to get the JSON data from our URL and call the displaySongs function.
 
 function getMusic(query, limit) {
   const params = {
@@ -81,6 +70,7 @@ function getMusic(query, limit) {
       if (response.ok) {
         return response.json();
       }
+      alert("Couldn't find songlist. Please Try again");
       throw new Error(response.statusText);
     })
 
@@ -91,7 +81,7 @@ function getMusic(query, limit) {
 }
 
 
-
+// *** Display Country Flag ***
 function displayCountry(responseJson) {
   $('#js-country-results').empty();
 
@@ -106,7 +96,7 @@ function displayCountry(responseJson) {
 
 
 
-
+// *** Display Top Song List ***
 function displaySongs(responseJson) {
   $('#js-top-songs').empty();
 
@@ -123,7 +113,7 @@ function displaySongs(responseJson) {
 }
 
 
-
+// *** Watch for user form submisson ***
 
 function watchForm() {
   $('form').submit(event => {
